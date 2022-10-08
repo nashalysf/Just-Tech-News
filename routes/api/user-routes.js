@@ -1,11 +1,9 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Post, Vote, Comment } = require('../../models');
 
 //GET users routes
 router.get('/', (req, res) =>{
-    User.findAll({
-      attributes: { exclude: ['password'] }
-    })
+    User.findAll()
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
         console.log(err);
@@ -16,11 +14,43 @@ router.get('/', (req, res) =>{
 //GET user by id routes
 router.get('/:id', (req, res) =>{
     User.findOne({
-      
+      include: [
+        {
+          model: Post,
+          attributes: ['id', 'title', 'post_url', 'created_at']
+        },
+        {
+          model: Post,
+          attributes: ['title'],
+          through: Vote,
+          as: 'voted_posts'
+        }
+      ],
         attributes: { exclude: ['password'] },
         where: {
             id: req.params.id
-        }
+        },
+        include: [
+          {
+            model: Post,
+            attributes: ['id', 'title', 'post_url', 'created_at']
+          },
+          // include the Comment model here:
+          {
+            model: Comment,
+            attributes: ['id', 'comment_text'],
+            include: {
+              model: Post,
+              attributes: ['title']
+            }
+          },
+          {
+            model: Post,
+            attributes: ['title'],
+            through: Vote,
+            as: 'voted_posts'
+          }
+        ]
     })
     .then(dbUserData => {
         if(!dbUserData){
@@ -50,12 +80,34 @@ router.post('/', (req, res) =>{
     });
 
 });
+router.post('/login', (req, res) => {
+  User.findOne({
+    where: {
+      email: req.body.email
+    }
+  }).then(dbUserData => {
+    if (!dbUserData) {
+      res.status(400).json({ message: 'Wrong email or password' });
+      return;
+    }
+    const validPassword = dbUserData.checkPassword(req.body.password);
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect password!' });
+      return;
+    }
+    res.json({ user: dbUserData,  message: 'You are now logged in!' });
+    // Verify user
+
+  });
+
+});
 
 //PUT user by id
 router.put('/:id', (req, res) =>{
       // key/value syntax
   // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
   User.update(req.body, {
+    individualHooks: true,
     where: {
       id: req.params.id
     }
