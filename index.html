@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just Tech News</title>
+  <link rel="stylesheet" href="../../public/stylesheet/style.css"/>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>
+        <a href="/">Just Tech News<div class="divider"></div><span class="slogan"> Tech is our passion</span></a>
+      </h1>
+      
+      <ul class="menu">
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">Sign-up</a></li>
+      </ul>
+      
+    </header>
+    <main>
+        <ol class="post-list">
+            <li>
+              <article class="post">
+                <div class="user_pic"></div>
+                <div class="title">
+                  <span>Handlebars Docs</span>
+                  (<a href="{{post_url}}" target="_blank">(https://handlebarsjs.com/guide/)</a>)
+                </div>
+                <div class="meta">
+                  10 point(s) by nashalysf on
+                  12pm
+                  |
+                  <a href="/post/{{id}}">2 comment(s)</a>
+                </div>
+              </article>
+            </li>
+          </ol>
+    </main>
+    <footer>
+      Thanks for visiting!
+    </footer>
+  </div>
+
+</body>
+
+</html>

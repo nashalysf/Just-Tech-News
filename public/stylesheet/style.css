@@ -1,0 +1,336 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+    background: linear-gradient(90deg, rgb(238, 124, 54) 0%, rgb(244, 230, 171) 90%);
+  }
+  
+  a {
+    text-decoration: none;
+    color: #FD841F;
+    font-weight: bold;
+    transition: color .1s;
+  }
+  h1 a{
+    font-size: 55px;
+    letter-spacing: -4px;
+    position: absolute;
+  }
+  .divider{
+    width: 2px;
+    height: 70px;
+    background-color: #ff643d;
+    position: absolute;
+    left: 363px;
+    top: 13px;
+  }
+  .slogan {
+    font-weight: lighter;
+    font-size: 20px;
+    letter-spacing: 0;
+    text-align: center;
+    position: absolute;
+    left: 180px;
+    top: 62px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  a:hover {
+    color: #e66a05;
+  }
+  
+  button {
+    background-color: transparent;
+    border: solid 5px;
+    padding: 10px 70px;
+    color: white;
+    font-weight: bold;
+    transition: background-color .3s;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    left: 62.2%;
+    top: 300px;
+  }
+  
+  button:hover {
+    background-color: #E45826;
+    border-color: #E45826;
+  }
+  
+  .post-list {
+    margin: 0;
+    padding: 0;
+    border: transparent;
+    border-radius: 5px;
+    background-color: #f9f6f6;
+    list-style: none;
+  }
+ 
+  textarea, input {
+    padding: .5%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+ 
+  input#email-login, #password-login{
+    position: relative;
+    left: 40%;
+    top: 275px;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+  #email-login{
+    margin-top: 15px;
+  }
+  .divider2{
+    height: 2px;
+    width: 70px;
+    background-color: wheat;
+    position: relative;
+    top: -30px;
+    left: 38px;
+  }
+  .login{
+    position: absolute;
+    left: 44%;
+    margin-top: 150px;
+  }
+  .login h2{
+    font-size: 50px;
+    color: white;
+  }
+  .login-link{
+    position: absolute;
+    left: 40%;
+    top: 62%;
+  }
+  .inputs{
+    position: relative;
+    left: 21%;
+  }
+  textarea:focus, input:focus {
+    outline: none;
+    border: 1px solid #ffaa0b;
+  }
+  
+  textarea {
+    min-width: 40%;
+    min-height: 100px;
+  }
+  
+  form > div {
+    margin-bottom: 2%;
+  }
+  
+  .login-form{
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+ 
+  .wrapper {
+    width: 100%;
+    min-height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .signup-form{
+    height: 900px;
+    position: relative;
+    left: 20%;
+  }
+  .signup{
+      position: absolute;
+      left: 41%;
+      margin-top: 150px;
+    }
+  .signup h2{
+      font-size: 50px;
+      color: white;
+    }
+  .signup-link{
+    position: relative;
+    left: 59%;
+    top: 35%;
+  }
+  .signup-btn{
+    right: 100px;
+    position: relative;
+    left: 40.5%;
+    top: 280px;
+  }
+
+  input#email-signup, #password-signup, #username-signup{
+    position: relative;
+    left: 40%;
+    top: 275px;
+    border-radius: 50px;
+    padding: 10px 20px;
+  }
+  #username-signup{
+    margin-top: 15px;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    padding: 0 1%;
+    background-color: white;
+  }
+  header h1 {
+    font-size: 1em;
+    height: 80px;
+  }
+  @media screen and (max-width: 600px) {
+     nav a{
+  position: relative;
+  right: 100px;
+  padding-left: 15px;
+ }
+ header{
+  width: 780px;
+ }
+ 
+  }
+  @media screen and (min-width: 680px) {
+    header{
+ width: 2500px;
+}
+nav{
+  position: relative;
+  left: 1000px;
+  padding-left: 15px;
+ }
+ }
+
+ .menu li{
+  list-style: none;
+  display: inline;
+  position: relative;
+  left: 800px;
+  padding: 0 10px;
+ }
+  main {
+    flex: 1;
+    padding: 2% 4%;
+    
+  }
+  
+  .btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: #FD841F;
+    font-size: 100%;
+    font-weight: bold;
+    transition: color .1s;
+    top: 0;
+    left: 7px;
+  }
+  
+  .btn-no-style:hover {
+    background: none;
+    color: #e66a05;
+  }
+  
+  .delete-post-btn {
+    background-color: #d41414;
+  }
+  
+  .delete-post-btn:hover {
+    background-color: #ff643d;
+  }
+  
+  .post {
+    margin-bottom: 2%;
+    line-height: 150%;
+    padding-left: 14px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    max-width: 700px;
+  }
+  .meta span{
+    font-weight: bold;
+  }
+  .post .title span {
+    font-style: italic;
+    font-size: 90%;
+    color: #7d7d7d;
+  }
+ 
+  .user_pic{
+    background-color: #FD841F;
+    height: 40px;
+    width: 40px;
+    border: transparent;
+    border-radius: 100px;
+    position: absolute;
+    margin-top: 3px;
+  }
+  .title, .meta{
+    position: relative;
+    left: 50px;
+  }
+  .edit-link {
+    display: block;
+    margin: -1.5% 0 2% 0;
+  }
+  
+  .upvote-btn {
+    background-color: #197d0f;
+    transition: background-color .1s;
+  }
+  
+  .upvote-btn:hover {
+    background-color: #1f9c13;
+  }
+  
+  .comment-form {
+    margin-bottom: 5%;
+  }
+  
+  .comment {
+    padding: 1%;
+    margin-bottom: 1%;
+  }
+  
+  .comment:nth-child(odd) {
+    background-color: #fff5eb;
+  }
+  
+  .comment .meta {
+    font-size: 90%;
+    margin-bottom: .5%;
+    opacity: .6;
+  }
+  
+  .new-post-form input {
+    width: 300px;
+  }
+  
+  .edit-post-form {
+    margin-bottom: 5%;
+  }
+  
+  footer {
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    font-size: 110%;
+    background-color: white;
+  }
