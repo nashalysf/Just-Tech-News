@@ -8,6 +8,7 @@
     margin: 0;
     font-family: sans-serif;
     color: #333;
+    background: linear-gradient(90deg, rgb(238, 124, 54) 0%, rgb(244, 230, 171) 90%);
   }
   
   a {
@@ -19,44 +20,49 @@
   h1 a{
     font-size: 55px;
     letter-spacing: -4px;
+    position: absolute;
   }
   .divider{
     width: 2px;
     height: 70px;
     background-color: #ff643d;
     position: absolute;
-    left: 375px;
-    top: 15px;
+    left: 363px;
+    top: 13px;
   }
   .slogan {
     font-weight: lighter;
     font-size: 20px;
     letter-spacing: 0;
     text-align: center;
-    position: relative;
+    position: absolute;
     left: 180px;
-    bottom: 10px;
+    top: 62px;
     display: flex;
     flex-wrap: wrap;
   }
   
   a:hover {
-    color: #fb9038;
+    color: #e66a05;
   }
   
   button {
-    background-color: #225ca3;
-    border: 0;
-    padding: 1%;
+    background-color: transparent;
+    border: solid 5px;
+    padding: 10px 70px;
     color: white;
     font-weight: bold;
-    transition: background-color .1s;
+    transition: background-color .3s;
     cursor: pointer;
     border-radius: 5px;
+    position: relative;
+    left: 62.2%;
+    top: 300px;
   }
   
   button:hover {
-    background-color: #3486eb;
+    background-color: #E45826;
+    border-color: #E45826;
   }
   
   .post-list {
@@ -67,16 +73,53 @@
     background-color: #f9f6f6;
     list-style: none;
   }
-  
+ 
   textarea, input {
     padding: .5%;
     border-radius: 5px;
     border: 1px solid #ccc;
   }
-  
+ 
+  input#email-login, #password-login{
+    position: relative;
+    left: 40%;
+    top: 275px;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+  #email-login{
+    margin-top: 15px;
+  }
+  .divider2{
+    height: 2px;
+    width: 70px;
+    background-color: wheat;
+    position: relative;
+    top: -30px;
+    left: 38px;
+  }
+  .login{
+    position: absolute;
+    left: 44%;
+    margin-top: 150px;
+  }
+  .login h2{
+    font-size: 50px;
+    color: white;
+  }
+  .login-link{
+    position: absolute;
+    left: 40%;
+    top: 62%;
+  }
+  .inputs{
+    position: relative;
+    left: 21%;
+  }
   textarea:focus, input:focus {
     outline: none;
-    border: 1px solid #3486eb;
+    border: 1px solid #ffaa0b;
   }
   
   textarea {
@@ -88,10 +131,13 @@
     margin-bottom: 2%;
   }
   
-  form label {
-    display: block;
+  .login-form{
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
   }
-  
+ 
   .wrapper {
     width: 100%;
     min-height: 100%;
@@ -99,23 +145,87 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    margin: 0;
   }
-  
+  .signup-form{
+    height: 900px;
+    position: relative;
+    left: 20%;
+  }
+  .signup{
+      position: absolute;
+      left: 41%;
+      margin-top: 150px;
+    }
+  .signup h2{
+      font-size: 50px;
+      color: white;
+    }
+  .signup-link{
+    position: relative;
+    left: 59%;
+    top: 35%;
+  }
+  .signup-btn{
+    right: 100px;
+    position: relative;
+    left: 40.5%;
+    top: 280px;
+  }
+
+  input#email-signup, #password-signup, #username-signup{
+    position: relative;
+    left: 40%;
+    top: 275px;
+    border-radius: 50px;
+    padding: 10px 20px;
+  }
+  #username-signup{
+    margin-top: 15px;
+  }
   header {
-    border-bottom: 2px solid #9C2C77;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 0 1%;
+    background-color: white;
   }
-  
   header h1 {
     font-size: 1em;
+    height: 80px;
   }
-  
+  @media screen and (max-width: 600px) {
+     nav a{
+  position: relative;
+  right: 100px;
+  padding-left: 15px;
+ }
+ header{
+  width: 780px;
+ }
+ 
+  }
+  @media screen and (min-width: 680px) {
+    header{
+ width: 2500px;
+}
+nav{
+  position: relative;
+  left: 1000px;
+  padding-left: 15px;
+ }
+ }
+
+ .menu li{
+  list-style: none;
+  display: inline;
+  position: relative;
+  left: 800px;
+  padding: 0 10px;
+ }
   main {
     flex: 1;
     padding: 2% 4%;
+    
   }
   
   .btn-no-style {
@@ -124,16 +234,17 @@
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: #225ca3;
+    color: #FD841F;
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
-    margin-left: 16px;
+    top: 0;
+    left: 7px;
   }
   
   .btn-no-style:hover {
     background: none;
-    color: #3486eb;
+    color: #e66a05;
   }
   
   .delete-post-btn {
@@ -150,13 +261,17 @@
     padding-left: 14px;
     padding-top: 5px;
     padding-bottom: 5px;
+    max-width: 700px;
   }
-  
+  .meta span{
+    font-weight: bold;
+  }
   .post .title span {
     font-style: italic;
     font-size: 90%;
     color: #7d7d7d;
   }
+ 
   .user_pic{
     background-color: #FD841F;
     height: 40px;
@@ -217,4 +332,5 @@
     justify-content: center;
     padding: 1%;
     font-size: 110%;
+    background-color: white;
   }

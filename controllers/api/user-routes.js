@@ -13,6 +13,13 @@ router.get('/', (req, res) =>{
 
 //GET user by id routes
 router.get('/:id', (req, res) =>{
+  if(!req.session.views){
+    req.session.views = 1;
+    console.log('Welcome to Just-Tech-News new user!');
+  } else{
+    req.session.views++
+    console.log(`You have visited ${req.session.views} times!`)
+  }
     User.findOne({
       include: [
         {
@@ -73,7 +80,15 @@ router.post('/', (req, res) =>{
         email: req.body.email,
         password: req.body.password
     })
-    .then(dbUserData => res.json(dbUserData))
+    .then(dbUserData => {
+      req.session.save(() => {
+          req.session.user_id = dbUserData.id;
+          req.session.username = dbUserData.username;
+          req.session.loggedIn = true;
+    
+          res.json(dbUserData);
+        });
+    })
     .catch(err =>{
         console.log(err);
         res.status(500).json(err);
@@ -91,15 +106,31 @@ router.post('/login', (req, res) => {
       return;
     }
     const validPassword = dbUserData.checkPassword(req.body.password);
+
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect password!' });
       return;
     }
-    res.json({ user: dbUserData,  message: 'You are now logged in!' });
-    // Verify user
+    req.session.save(() => {
+      // declare session variables
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
 
+      res.json({ user: dbUserData,  message: 'You are now logged in!' });
+    });
   });
+});
 
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  }
+  else {
+    res.status(404).end();
+  }
 });
 
 //PUT user by id
