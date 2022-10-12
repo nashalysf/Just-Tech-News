@@ -1,16 +1,4 @@
-<article class="post single-post">
-    <div class="user_pic user_pic2"><div class="userName">{{post.user.username}}</div></div>
-  <div class="title title2">
-    <a href="{{post.post_url}}" target="_blank">{{post.title}}</a></br>
-    <span>({{post.post_url}})</span>
-  </div>
-  <div class="meta meta2">
-    {{post.vote_count}} like(s) by {{post.user.username}} on
-    {{post.created_at}} </br>
-    |
-    <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-  </div>
-</article>
+{{> single-post-info post}}
 
 {{#if loggedIn}}
 <form class="comment-form">
@@ -27,18 +15,7 @@
 </form>
 {{/if}}
 
-<div class="comments">
-  {{#each post.comments as |comment|}}
-  <section class="comment">
-    <div class="meta meta3">
-      {{user.username}} on {{created_at}}
-    </div>
-    <div class="text">
-       <div class="user_pic user_pic3"><div class="userName2">{{comment.user.username}}</div></div><p>{{comment_text}}</p>
-    </div>
-  </section>
-  {{/each}}
-</div>
+{{> comments post.comments}}
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>

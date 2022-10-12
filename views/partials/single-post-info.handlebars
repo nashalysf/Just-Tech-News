@@ -1,0 +1,13 @@
+<article class="post single-post">
+    <div class="user_pic user_pic2"><div class="userName">{{user.username}}</div></div>
+  <div class="title title2">
+    <a href="{{post_url}}" target="_blank">{{title}}</a></br>
+    <span>({{format_url post_url}})</span>
+  </div>
+  <div class="meta meta2">
+    {{vote_count}} {{format_plural "like" vote_count}} by {{user.username}} on
+    {{format_date created_at}} </br>
+    |
+    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+  </div>
+</article>
