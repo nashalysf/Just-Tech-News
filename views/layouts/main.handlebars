@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Just Tech News</title>
   <link rel="stylesheet" href="../../stylesheet/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Cormorant+SC:wght@300;400&family=Quicksand&family=Righteous&family=Roboto:wght@100;300;400&family=Square+Peg&family=Uchen&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,15 +17,21 @@
       <h1>
         <a href="/">Just Tech News<div class="divider"></div><span class="slogan"> Tech is our passion</span></a>
       </h1>
+        
+        {{#if loggedIn}}
+        
+         <nav>
+          <button id="logout" class="btn-no-style"><a href="/login">Logout</a></button>
+        </nav>
+        {{else}}
         <nav>
       <a href="/login" id="login" class="log-nav">Login</a>
         </nav>
         <nav>
       <a href="/signup" class="sign-nav">Sign-up</a>
         </nav>
-         <nav>
-          <button id="logout" class="btn-no-style"><a href="/login">Logout</a></button>
-        </nav>
+
+        {{/if}}
     </header>
     <main>
       {{{ body }}}
@@ -31,7 +40,9 @@
       Thanks for visiting!
     </footer>
   </div>
+  {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
+   {{/if}}
 </body>
 
 </html>

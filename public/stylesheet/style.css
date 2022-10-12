@@ -3,7 +3,7 @@
   }
   
   body, html {
-    height: 100%;
+    height: max-content;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
@@ -28,7 +28,7 @@
     background-color: #ff643d;
     position: absolute;
     left: 363px;
-    top: 13px;
+    top: 10px;
   }
   .slogan {
     font-weight: lighter;
@@ -37,7 +37,7 @@
     text-align: center;
     position: absolute;
     left: 180px;
-    top: 62px;
+    top: 57px;
     display: flex;
     flex-wrap: wrap;
   }
@@ -193,27 +193,13 @@
     font-size: 1em;
     height: 80px;
   }
-  @media screen and (max-width: 600px) {
-     nav a{
-  position: relative;
-  right: 100px;
-  padding-left: 15px;
- }
- header{
-  width: 780px;
- }
- 
-  }
-  @media screen and (min-width: 680px) {
-    header{
- width: 2500px;
-}
+
 nav{
   position: relative;
-  left: 1000px;
+  left: 800px;
   padding-left: 15px;
  }
- }
+ 
 
  .menu li{
   list-style: none;
@@ -225,7 +211,7 @@ nav{
   main {
     flex: 1;
     padding: 2% 4%;
-    
+    width: max-content;
   }
   
   .btn-no-style {
@@ -258,10 +244,15 @@ nav{
   .post {
     margin-bottom: 2%;
     line-height: 150%;
-    padding-left: 14px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    max-width: 700px;
+    padding-left: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: 720px;
+    border: transparent;
+    border-radius: 5px;
+    background-color: #f9f6f6;
+    height: max-content;
+    width: 700px;
   }
   .meta span{
     font-weight: bold;
@@ -279,11 +270,23 @@ nav{
     border: transparent;
     border-radius: 100px;
     position: absolute;
-    margin-top: 3px;
+    margin-top: 10px;
   }
   .title, .meta{
     position: relative;
     left: 50px;
+    font-family: Quicksand;
+  }
+  .title2{
+    font-size: 23px;
+    position: relative;
+    left: 0px;
+    top: 80px;
+    line-height: 1.5;
+  }
+  .meta2{
+    position: relative;
+    bottom: 55px;
   }
   .edit-link {
     display: block;
@@ -291,33 +294,117 @@ nav{
   }
   
   .upvote-btn {
-    background-color: #197d0f;
+    background-color: #fa5858;
+    border: solid #fa5858 2px;
+    border-radius: 100px;
     transition: background-color .1s;
+    position: absolute;
+    padding: 5px 5px;
+    top: 140px;
+    left: 690px;
   }
   
   .upvote-btn:hover {
-    background-color: #1f9c13;
+    background-color: #e41111;
+    border-color: #e41111 ;
   }
-  
+  .liked{
+    background-color: #fa5858;
+  }
+  .comment-btn{
+    position: absolute;
+    top: 510px;
+    left: 490px;
+    background-color: #E45826;
+    border-color: #E45826;
+    width: max-content;
+    height: max-content;
+  }
+  .single-post{
+    height: 250px;
+  }
+  .single-post .title{
+    position: relative;
+    margin-top: 50px;
+  }
+  .userName{
+    margin-left: 60px;
+    margin-top: 12px;
+    font-size: 22px;
+    text-decoration: underline;
+    font-family: Roboto;
+    width: 200px;
+  }
+  .user_pic2{
+    height: 50px;
+    width: 50px;
+    margin-top: 2px;
+  }
+  .comment-body{
+    width: 700px;
+    position: relative;
+    left: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    border: solid #e3dfdd 2px;
+    height: max-content;
+    font-family: Quicksand;
+  }
   .comment-form {
     margin-bottom: 5%;
   }
   
   .comment {
+    position: relative;
+    top: 100px;
     padding: 1%;
     margin-bottom: 1%;
+    margin-top: 15px;
+    border: transparent;
+    border-radius: 7px;
+    background-color: #f9f6f6;
   }
   
   .comment:nth-child(odd) {
-    background-color: #fff5eb;
+    background-color: #f9f6f6;
   }
   
   .comment .meta {
     font-size: 90%;
     margin-bottom: .5%;
     opacity: .6;
+    font-family: Quicksand;
   }
-  
+ .meta2{
+  position: relative;
+  left: 5px;
+ }
+ .meta3{
+  position: relative;
+  left: 5px;
+ }
+  div.text{
+    line-height: 1.5;
+    position: relative;
+    left: 15px;
+  }
+  div.text p{
+    font-size: 20px;
+    position: relative;
+    left: 45px;
+    top: -18px;
+  }
+  .user_pic3{
+    position: relative;
+  }
+  .userName2{
+    margin-left: 45px;
+    font-size: 18px;
+    text-decoration: underline;
+    font-family: Roboto;
+    position: relative;
+    top: 5px;
+  }
   .new-post-form input {
     width: 300px;
   }
@@ -333,4 +420,5 @@ nav{
     padding: 1%;
     font-size: 110%;
     background-color: white;
+    margin-top: 150px;
   }
