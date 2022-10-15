@@ -1,0 +1,51 @@
+<section class="dashboard">
+  
+<section class="user-info">
+  <div class="card">
+    <nav class="card-nav">
+          <a href="/" class="home-link">Home</a>
+          <button id="logout2" class="btn-no-style home-link log-link"><a href="/login">Logout</a></button>
+          <a href="/dashboard" class="home-link edit-password">Change Password</a>
+        </nav>
+    <div class="user_pic user-profile2"></div>
+    <div id="profile_userName">Username</div>
+  </div>
+</section>
+<section class="new-post">
+  <h2>Create New Post</h2>
+
+  <form class="new-post-form">
+    <div>
+        <div class="user_pic user-profile"><div class="userName">{{user.username}}</div></div>
+      <label for="post-title create-title"></label>
+      <input type="text" id="post-title" name="post-title" placeholder="Title"/>
+    </div>
+    <div>
+      <label for="post-url"></label>
+      <input id="post-url" name="post-url" placeholder="URL Link"/>
+    </div>
+    <div>
+      <label for="post-text create-text" ></label>
+      <textarea type="text" id="post-text" class="comment-box" name="post-text" placeholder="Message" maxlength="150"></textarea>
+    </div>
+    <button type="submit" class="btn create-btn">Create</button>
+  </form>
+</section>
+
+{{#if posts.length}}
+<section class="dashboard-posts">
+  <h2 class="posts-titles">Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+<script src="/javascript/add-post.js"></script>
+<script src="/javascript/logout-dashboard.js"></script>
+</section>
+<!--id and name = post-title create-title-->
