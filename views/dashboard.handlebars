@@ -1,3 +1,16 @@
+<section class="dashboard">
+  
+<section class="user-info">
+  <div class="card">
+    <nav class="card-nav">
+          <a href="/" class="home-link">Home</a>
+          <button id="logout2" class="btn-no-style home-link log-link"><a href="/login">Logout</a></button>
+          <a href="/dashboard" class="home-link edit-password">Change Password</a>
+        </nav>
+    <div class="user_pic user-profile2"></div>
+    <div id="profile_userName">Username</div>
+  </div>
+</section>
 <section class="new-post">
   <h2>Create New Post</h2>
 
@@ -12,16 +25,16 @@
       <input id="post-url" name="post-url" placeholder="URL Link"/>
     </div>
     <div>
-      <label for="post-text create-text"></label>
-      <input type="text" id="post-text" name="post-text" placeholder="Message"/>
+      <label for="post-text create-text" ></label>
+      <textarea type="text" id="post-text" class="comment-box" name="post-text" placeholder="Message" maxlength="150"></textarea>
     </div>
     <button type="submit" class="btn create-btn">Create</button>
   </form>
 </section>
 
 {{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
+<section class="dashboard-posts">
+  <h2 class="posts-titles">Your Posts</h2>
   <ol>
     {{#each posts as |post|}}
     <li>
@@ -33,4 +46,6 @@
 </section>
 {{/if}}
 <script src="/javascript/add-post.js"></script>
+<script src="/javascript/logout-dashboard.js"></script>
+</section>
 <!--id and name = post-title create-title-->
