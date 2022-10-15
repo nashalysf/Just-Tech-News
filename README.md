@@ -37,7 +37,7 @@ DB_PASSWORD=''
 ## Usage
 * Create a free acount and start exploring the app functionalities!
 
-Note: The edit page functionality and change password are currently under develeopment and are not functioning but soon it will!
+Note: The edit page functionality to delete post and Dashboard page to change password are currently under development and are not currently functioning but soon it will!
 
 ## Learning Curve
 * While creating this app I learned and practice:
