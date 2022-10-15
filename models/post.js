@@ -11,14 +11,14 @@ class Post extends Model {
       return Post.findOne({
         where: {
           id: body.post_id
-        },
-        attributes: [
+        }
+       /* attributes: [
           'id',
           'post_url',
           'title',
           'created_at',
           [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-        ]
+        ]*/
       });
     });
   }
