@@ -14,7 +14,7 @@ The purpose of this project was to built a CMS-style blog site - similar to a Wo
 ![Screenshot.jpg](./public/img/Screenshot.jpg)
 
 ### Live View:
-[https://just-tech-news-08.herokuapp.com/](https://just-tech-news-08.herokuapp.com/)
+[Heroku](https://just-tech-news-08.herokuapp.com/)
 
 ## Installation
 1. To install this application, `git clone` this repo.
@@ -49,7 +49,7 @@ Note: The edit page functionality to delete post and Dashboard page to change pa
 6. Create all of the server endpoints using RESTful API standards to work with model’s data and execute CRUD 
 7. Create a login route for authentication. Use environment variables to protect sensitive data while securing user passwords stored in a database with hashing.
 
-## Questions
+## Questions?
 For any questions about this repo, please contact me at [nashalysf@gmail.com](mailto:nashalysf@gmail.com).
 
 To view more of my works, please visit my GitHub: [nashalysf](https://github.com/nashalysf).
