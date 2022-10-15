@@ -8,8 +8,8 @@ async function editFormHandler(event) {
       window.location.toString().split('/').length - 1
     ];
   
-    if (comment_text) {
-        const response = await fetch('/dashboard/edit', {
+    if (post_text) {
+        const response = await fetch(`/dashboard/edit/${post_id}`, {
           method: 'PUT',
           body: JSON.stringify({
             post_id,
