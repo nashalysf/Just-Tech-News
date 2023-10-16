@@ -50,6 +50,6 @@ Note: The edit page functionality to delete post and Dashboard page to change pa
 7. Create a login route for authentication. Use environment variables to protect sensitive data while securing user passwords stored in a database with hashing.
 
 ## Questions?
-For any questions about this repo, please contact me at [nashalysf@gmail.com](mailto:nashalysf@gmail.com).
+For any questions about this repo, please contact me at [naferi.zoe@gmail.com](mailto:naferi.zoef@gmail.com).
 
 To view more of my works, please visit my GitHub: [nashalysf](https://github.com/nashalysf).
